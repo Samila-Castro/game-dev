@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap");
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.cardList {
+  max-width: 300px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(#000, 0.05), 0 20px 50px 0 rgba(#000, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 1rem;
+  position: relative;
+  transition: 0.2s ease-in;
+  max-width: 250px;
+  height: 280px;
+}
+
+.card:hover {
+  animation: rotateImage 0.4s infinite alternate;
+  cursor: pointer;
+}
+
+.cardIimage {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardHeader {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cardFooter {
+  margin-top: 1.25rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  color: #787878;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cardHeader h4 {
+  color: #242424;
+  font-weight: 600;
+}
+
+.cardHeader p {
+  color: #747070b0;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
