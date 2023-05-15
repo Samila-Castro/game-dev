@@ -1,18 +1,19 @@
-import { Card } from "./components/Card/Card";
 import "./App.css";
-import { SidenavC } from "./components/SideNave/SideNave";
+import { Layout } from "./Layout";
+import { Home } from "./components/Home/Home";
+import { Game } from "./components/Game/Game";
+import { ReactNode, useState } from "react";
 
 function App() {
-  return (
-    <>
-      <SidenavC />
-      <div className="mainSide">
-        <Card />
-        <Card />
-        <Card />
-      </div>
-    </>
-  );
+  const [currentComponent] = useState<ReactNode>("Game");
+
+  const components = () => {
+    if (currentComponent === "Home") return <Home />;
+    if (currentComponent === "Game") return <Game />;
+    return <Home />;
+  };
+
+  return <Layout>{components()}</Layout>;
 }
 
 export default App;
