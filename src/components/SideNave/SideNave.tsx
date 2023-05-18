@@ -2,27 +2,30 @@ import { Icon } from "@rsuite/icons";
 import { FaHome } from "react-icons/fa";
 import { FaGamepad } from "react-icons/fa";
 import GearIcon from "@rsuite/icons/Gear";
-
 import styles from "./SideNave.module.css";
-export const SidenavC = () => {
+
+interface SideNaveProps {
+  handleContentChange: (value: string) => void;
+}
+export const SidenavC = ({ handleContentChange }: SideNaveProps) => {
   return (
     <div className={styles.sideNave}>
       <div className={styles.buttonsWrapper}>
         <div className={styles.linksWrapper}>
-          <a href="">
+          <button onClick={() => handleContentChange("Home")}>
             <Icon as={FaHome} color="#fff" />
-          </a>
-          <a href="">
+          </button>
+          <button onClick={() => handleContentChange("Game")}>
             {" "}
             <Icon as={FaGamepad} color="#fff" />
-          </a>
-          <a href="">
+          </button>
+          <button>
             {" "}
             <Icon as={FaGamepad} color="#fff" />
-          </a>
-          <a href="">
+          </button>
+          <button>
             <Icon as={FaGamepad} color="#fff" />
-          </a>
+          </button>
         </div>
         <div className={styles.gearIcon}>
           {" "}

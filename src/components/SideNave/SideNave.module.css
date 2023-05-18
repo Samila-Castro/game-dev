@@ -16,20 +16,18 @@
   gap: 8px;
 }
 
-.linksWrapper {
-}
-
-.sideNave a {
+.sideNave button {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
   border-radius: 50%;
-
+  border: none;
+  background: transparent;
   transition: background 0.2s;
 }
 
-.sideNave a:hover {
+.sideNave button:hover {
   background: #a19c9c67;
   cursor: pointer;
 }
@@ -40,4 +38,7 @@
 
 .gearIcon:hover {
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
 }
