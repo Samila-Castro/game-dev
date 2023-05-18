@@ -32,7 +32,7 @@ img {
 }
 
 .cardHeader {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -57,7 +57,7 @@ a {
   text-decoration: none;
 }
 
-.cardHeader h4 {
+.cardHeader h5 {
   color: #242424;
   font-weight: 600;
 }
