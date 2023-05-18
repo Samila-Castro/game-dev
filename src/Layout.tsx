@@ -2,15 +2,15 @@ import "./App.css";
 import { SidenavC } from "./components/SideNave/SideNave";
 
 interface IProps {
-  props: any;
-}
-function Layout(props: any) {
-  return (
-    <>
-      <SidenavC />
-      <div className="mainSide">{props.children}</div>
-    </>
-  );
+  children: any;
+  handleContentChange: (value: string) => void;
 }
 
-export { Layout };
+export const Layout = ({ handleContentChange, children }: IProps) => {
+  return (
+    <>
+      <SidenavC handleContentChange={handleContentChange} />
+      <div className="mainSide">{children}</div>
+    </>
+  );
+};
