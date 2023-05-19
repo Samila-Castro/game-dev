@@ -2,6 +2,7 @@ import "./App.css";
 import { Layout } from "./Layout";
 import { Home } from "./components/Home/Home";
 import { Game } from "./components/Game/Game";
+import { NewGameConfirm } from "./components/NewGameConfirm/NewGameConfirm";
 import { ReactNode, useState } from "react";
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
       return <Home handleContentChange={handleContentChange} />;
     if (currentComponent === "Game")
       return <Game handleContentChange={handleContentChange} />;
+    if (currentComponent === "NewGameConfirm")
+      return <NewGameConfirm handleContentChange={handleContentChange} />;
     return <Home handleContentChange={handleContentChange} />;
   };
 

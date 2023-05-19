@@ -67,8 +67,17 @@ export const Game = ({ handleContentChange }: GameProps) => {
     }
   };
 
+  const checksMatch = () => {
+    return cards?.every((card) => card.matched);
+  };
+
   //compare 2 selecteds cards
   useEffect(() => {
+    const result = checksMatch();
+    if (result) {
+      handleContentChange("NewGameConfirm");
+      //setShowPopUp(true);
+    }
     if (choiceOne && choicetwo) {
       setDisabled(true);
       if (choiceOne?.src === choicetwo?.src) {
@@ -77,7 +86,6 @@ export const Game = ({ handleContentChange }: GameProps) => {
             if (card.src === choiceOne.src) {
               return { ...card, matched: true };
             } else {
-              console.log(card);
               return card;
             }
           });
