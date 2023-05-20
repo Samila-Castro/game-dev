@@ -44,8 +44,13 @@ export const Game = ({ handleContentChange }: GameProps) => {
     setOpen(true);
   };
 
-  const handleClose = () => {
+  const handleClosePopUp = () => {
     handleContentChange("Home");
+    setOpen(false);
+  };
+
+  const handleCancellPopUp = () => {
+    handleContentChange("Game");
     setOpen(false);
   };
 
@@ -135,13 +140,13 @@ export const Game = ({ handleContentChange }: GameProps) => {
           </div>
         )}
       </div>
-      <Modal open={open} onClose={handleClose} size="xs">
+      <Modal open={open} onClose={handleClosePopUp} size="xs">
         <Modal.Body>Are you sure?</Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose} appearance="primary">
+          <Button onClick={handleClosePopUp} appearance="primary">
             Ok
           </Button>
-          <Button onClick={handleClose} appearance="subtle">
+          <Button onClick={handleCancellPopUp} appearance="subtle">
             Cancel
           </Button>
         </Modal.Footer>
